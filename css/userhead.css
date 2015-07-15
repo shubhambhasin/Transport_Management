@@ -1,0 +1,23 @@
+@charset "utf-8";
+@charset "utf-8";
+/* CSS Document */
+#userheader
+{
+border:3px solid black;
+display:flex;
+border-top:hidden;
+background-color:#686868;
+padding:0px 100px 10px 10px;
+position:relative;
+height:30px;
+
+}
+
+#left
+{
+	position:relative;
+	margin-left:auto;
+}
+
+/* CSS Document */
+

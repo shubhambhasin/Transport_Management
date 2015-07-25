@@ -3,11 +3,12 @@ require_once './config.php';
 class buys extends model
 	{
 		public function add($type,$vehicle_id)  //add vehicle in vehicle_alloy table
-		 	{
-				 		$this->database->insert('buys',[ 
+		 	{			
+						$date=date('d/m/Y');
+				 		return $this->database->insert('buys',[ 
 							'type'=>$type,
 							'reg_no' => $vehicle_id,
-							'buy_date' => date('d/m/Y')]);
+							'buy_date' => strtotime($date)]);
 							
 			}	
 			

@@ -18,8 +18,9 @@ if (isset($_POST['submit']))
 		$_SESSION['userid']=$login->getId($_POST['username']);
 		$_SESSION['username']=$_POST['username'];
 		$_SESSION['type']=2;
-		$_SESSION['last_login']=date("Y/m/d  h:i:sa");
-		$login->addDate($_SESSION['last_login'],$_SESSION['userid']);
+		$date=date("d-m-y  h:i:sa");
+		$_SESSION['last_login']=strtotime($date);
+		$login->update('last_login',$_SESSION['last_login'],$_SESSION['userid']);
 		header('Location:'.URL.'userhp.php');					//relocating to users homepage
 	}	else	{
 					echo "FILL COMPLETE INFO PLEASE";

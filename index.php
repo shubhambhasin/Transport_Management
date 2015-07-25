@@ -57,7 +57,8 @@ if(isset($_SESSION['username']))		//if already logged in
 								$_SESSION['username']=$_POST['username'];		//setting session parameters
 	     						 $_SESSION['type']=$login->get('type',$_POST['username']);
 								 $_SESSION['userid']=$login->get('userid',$_POST['username']);
-								 $_SESSION['last_login']=date("d/m/Y  h:i:sa");
+								 $time=date("d-m-Y  h:i:sa");
+								 $_SESSION['last_login']=strtotime($time);
 								 $login->update('last_login',$_SESSION['last_login'],$_SESSION['userid']);		//add last login
 	     						 switch($_SESSION['type'])				//checking user type
 									{

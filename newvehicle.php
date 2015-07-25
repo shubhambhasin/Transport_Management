@@ -16,8 +16,10 @@ if(($_SESSION['type']==0))	//only admin  allowed
 	$vehicle= new buys();
 	$vehicle->add(0,$_POST['vehicleid']);
 	$expense=new expenses();
-	$expense->add(2,0,$_POST['vehicleid'],$_POST['cost']);
-	echo "MESSAGE : vehicle added";	
+	if($expense->add(2,0,$_POST['vehicleid'],$_POST['cost']))
+		echo "MESSAGE : vehicle added";	
+	else
+		echo "MESSAGE : vehicle was not added";	
 		}else
   			{
 		echo "OOPS !! You missed thing";

@@ -1,6 +1,6 @@
 <?php
-session_start();
 require_once 'config.php';  //include config file
+session_start();
 require_once 'smartyhead.php';  //include smarty lib
 $smarty->assign('CSS_URL', CSS_URL);
 $smarty->display('header.tpl');// include header file

@@ -14,7 +14,7 @@ $smarty->display('managinghp.tpl');  //including staff page
 $smarty->display('footer.tpl');   //includind footer
 }
 else
-echo "YOU CANT";
+header('Location:' . URL . 'notauthorised.php');
 }	else
 header('Location:' . URL . 'noaccess.php');
 ?>

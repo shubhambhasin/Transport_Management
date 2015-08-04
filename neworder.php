@@ -61,7 +61,7 @@ $smarty->assign('allRoutes',$allRoutes);
  $smarty->display('footer.tpl');   //include footer file
 }
 else
-echo "you cant";
+header('Location:' . URL . 'notauthorised.php');
 }	else
 header('Location:' . URL . 'noaccess.php');
 ?>

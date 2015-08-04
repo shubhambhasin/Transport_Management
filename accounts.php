@@ -168,7 +168,7 @@ $chart->makeChart("Column2D", "myFirstChart" , 600, 300, "chart-1", "json",
  $smarty->display('footer.tpl');   //include footer file
 }
 else
-echo "you cant";
+header('Location:' . URL . 'notauthorised.php');
 }	else
 header('Location:' . URL . 'noaccess.php');
 ?>

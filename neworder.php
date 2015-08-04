@@ -1,8 +1,10 @@
 <?php
+ require_once 'config.php';    //include config file
 session_start();
+if(isset($_SESSION['userid']))
+{
 if($_SESSION['type']==2)
 {
- require_once 'config.php';    //include config file
  require_once 'smartyhead.php';   //include smarty lib
  require_once 'helper/Validation.php';  //email validation
  $smarty->assign('CSS_URL', CSS_URL);
@@ -60,4 +62,6 @@ $smarty->assign('allRoutes',$allRoutes);
 }
 else
 echo "you cant";
+}	else
+header('Location:' . URL . 'noaccess.php');
 ?>

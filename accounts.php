@@ -1,12 +1,14 @@
 <?php
+require_once 'config.php';    //include config file
 session_start();
+if(isset($_SESSION['userid']))
+{
 if(($_SESSION['type']==0) || (($_SESSION['type']==1) && ($_SESSION['staffid']==1)))			//only admin and accounts staff allowedstaff allowed
 {
- require_once 'config.php';    //include config file
+
  require_once 'smartyhead.php';   //include smarty lib
  require_once 'helper/Validation.php';  //email validation
  //require_once 'library/charts/fusioncharts.php';   //including library for charts
-
  $smarty->assign('CSS_URL', CSS_URL);
  $smarty->assign('JS_URL', JS_URL);
  $smarty->assign('LIBRARY_URL', LIBRARY_URL);
@@ -167,6 +169,8 @@ $chart->makeChart("Column2D", "myFirstChart" , 600, 300, "chart-1", "json",
 }
 else
 echo "you cant";
+}	else
+header('Location:' . URL . 'noaccess.php');
 ?>
 
   

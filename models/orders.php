@@ -6,14 +6,14 @@ class orders extends model
   	 public function add($client_id,$from,$to,$weight,$payStatus)
 		 {                     
 			 $t=strtotime("+3 Days");
-			 $orderDate=date('d-m-Y');
-			 $lastDate=date('d-m-Y',$t);
-									   $this->database->insert('orders',[
+			 $orderDate=strtotime(date('d-m-Y'));
+			 $lastDate=strtotime(date('d-m-Y',$t));
+			 						   $this->database->insert('orders',[
 									'client_id' =>$client_id,
 									'source' => $from,
 									'destination' => $to,
-									'order_date' => strtotime('$orderDate'),
-									'last_date' => strtotime('$lastDate'),
+									'order_date' => $orderDate,
+									'last_date' => $lastDate,
 									'weight' => $weight,
 									'assigned_person_id' => 'abc',
 									'pay_status' => $payStatus,

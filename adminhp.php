@@ -7,7 +7,7 @@ if($_SESSION['type']==0)
 $smarty->assign('username',$_SESSION['username']);
 $smarty->assign('CSS_URL', CSS_URL);
 $smarty->display('header.tpl');     //including headers
-$smarty->display('userheader.tpl'); 
+ $smarty->display('userheader.tpl');
 $smarty->display('adminhp.tpl');  //including admin page
 $smarty->display('footer.tpl');   //includind footer
 }

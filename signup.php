@@ -1,6 +1,6 @@
 <?php
-require_once 'config.php';   // Include configuration 
-require_once 'smartyhead.php'; //include smarty lib
+require_once 'filehead.php';  //include filehead file
+session_destroy();
 include 'helper/Validation.php';  // include helper 
 $smarty->assign('CSS_URL', CSS_URL);
 $smarty->display('header.tpl');    //including header

@@ -1,9 +1,9 @@
 <?php
-session_start();
+require_once 'filehead.php';  //include filehead file
+if(isset($_SESSION['userid']))
+{
 if($_SESSION['type']==0)  	//verifying only admin allowed
 {
-require_once 'config.php';    //include config file
-require_once 'smartyhead.php';   //include smarty lib
 require_once 'helper/Validation.php';  //email validation
 $smarty->assign('CSS_URL', CSS_URL);
 $smarty->display('header.tpl');
@@ -26,5 +26,7 @@ $smarty->display('newstaff.tpl');	//including newstaff template
 $smarty->display('footer.tpl');   //include footer file
 }
 else
-echo "you cant";
+header('Location:' . URL . 'notauthorised.php');
+}	else
+header('Location:' . URL . 'noaccess.php');
 ?>

@@ -1,11 +1,9 @@
 <?php
- require_once 'config.php';    //include config file
-session_start();
+require_once 'filehead.php';  //include filehead file
 if(isset($_SESSION['userid']))
 {
 if(($_SESSION['type']==0) || (($_SESSION['type']==1) && ($_SESSION['staffid']==2)))			//only admin and manging staff allowedstaff allowed
 {
- require_once 'smartyhead.php';   //include smarty lib
  require_once 'helper/Validation.php';  //email validation
  $smarty->assign('CSS_URL', CSS_URL);
  $smarty->display('header.tpl');
